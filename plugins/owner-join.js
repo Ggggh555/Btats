@@ -30,7 +30,7 @@ const handler = async (m, {conn, text, isMods, isOwner, isPrems}) => {
     throw tradutor.texto5;
   }
 };
-handler.help = ['join [chat.whatsapp.com]'];
+handler.help = ['انضم [chat.whatsapp.com]'];
 handler.tags = ['premium'];
 handler.command = /^join|nuevogrupo$/i;
 handler.private = true;
