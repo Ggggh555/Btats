@@ -14,8 +14,8 @@ global.authFile = `MysticSession`;
 global.isBaileysFail = false
 
 global.owner = [
-  ['201273070745', '𝑍𝛩𝐹𝐴𝑁', true],
-  ['201225784766', '𝑀𝐴𝐼𝐾𝑌', true]
+  ['201157028937', '𝔻𝕠𝕞𝕒', true],
+  ['201157028937', '𝔻𝕠𝕞𝕒★𝔹𝕆𝕋', true]
 ];
 
 global.suittag = ['201273070745','201225784766'];
