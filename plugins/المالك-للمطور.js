@@ -8,9 +8,9 @@ let handler = async (m, { conn, text }) => {
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
     else who = m.sender
   
-  let teks = `*⟥•════─━⋄❲𝑍𝛩𝐹𝐴𝑁•𝐵𝛩𝑇❳⋄━─════•⟤*\n*┊المرسل : @${who.split`@`[0]}*\n*┊الرسالة :*\n> *${text}\n*⟥•════─━⋄❲𝑍𝛩𝐹𝐴𝑁•𝐵𝛩𝑇❳⋄━─════•⟤*`;
+  let teks = `*⟥•════─━⋄❲𝔻𝕠𝕞𝕒★𝔹𝕠𝕥❳⋄━─════•⟤*\n*┊المرسل : @${who.split`@`[0]}*\n*┊الرسالة :*\n> *${text}\n*⟥•════─━⋄❲𝔻𝕠𝕞𝕒★𝔹𝕠𝕥❳⋄━─════•⟤*`;
   
-  const me = '201273070745@s.whatsapp.net';
+  const me = '201157028937@s.whatsapp.net';
   
    try {
    
@@ -19,13 +19,13 @@ let handler = async (m, { conn, text }) => {
   
   await conn.sendFile(me, url, 'user.png', teks, m, null, { mentions: [who]})
   
-  m.reply(`*تم ارسال رسالتك إلي مطوري 🧞*\n> أنتظر الرد من مطوري ي صديقي...`)
+  m.reply(`*تم ارسال رسالتك إلي مطوري 🧞*\n> أنتظر الرد من مطوري ي روح قلب دوما...`)
   
         } catch (error) {
   
   conn.sendMessage(me, {text : teks, mentions: [who]}, { quoted: m });
   
-  m.reply(`*تم ارسال رسالتك إلي مطوري 🧞*\n> أنتظر الرد من مطوري ي صديقي...`)
+  m.reply(`*تم ارسال رسالتك إلي مطوري 🧞*\n> أنتظر الرد من مطوري ي قلب دوما...`)
   
   }
 //  conn.sendMessage(me, {text : teks}, { quoted: m });
