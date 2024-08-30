@@ -1,193 +1,173 @@
+import axios from 'axios';
 import fetch from 'node-fetch';
-import { prepareWAMessageMedia, generateWAMessageFromContent } from '@whiskeysockets/baileys';
-import cheerio from 'cheerio';
+const handler = async (m, {command, conn}) => {
+  const datas = global
+    const idioma = datas.db.data.users[m.sender].language
+    const _translate = JSON.parse(fs.readFileSync(`./src/languages/${idioma}.json`))
+    const tradutor = _translate.plugins.adult_comandos
 
-const handler = async (m, { text, conn, isOwner, args, command, usedPrefix }) => {
+  if (!db.data.chats[m.chat].modohorny && m.isGroup) throw tradutor.texto1;
 
-let fakecontact = { 'key': { 'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': '𝐒𝐇𝐀𝐖𝐀𝐙𝐀-𝐁𝐎𝐓' }, 'message': { 'contactMessage': { 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` } }, 'participant': '0@s.whatsapp.net' };
-  
-
-  if (db.data.chats[m.chat].modohorny && m.isGroup) return conn.sendMessage(m.chat,{text: '*وضع التقييد شغال ي حوب 🧞*'}, {quoted: fakecontact });   
-  
-  
-  
-  if (command === 'سكس') {
-  
- if (!text) return conn.sendMessage(m.chat, {text: `*فين النص اللي هتبحث عنو ي حوب 🧞*`}, {quoted: fakecontact }); 
-  
-
-  try {
-    const vids_ = {
-      from: m.sender,
-      urls: [],
-    };
-
-    if (!global.videoListXXX) {
-      global.videoListXXX = [];
-    }
-
-    if (global.videoListXXX[0]?.from === m.sender) {
-      global.videoListXXX.splice(0, global.videoListXXX.length);
-    }
-
-
-    const res = await xnxxsearch(text);
-    const json = res.result;
-
-    const plinke = `https://image.thum.io/get/fullpage/`;
-  const imageUrl = `${plinke}https://www.xnxx.com/search/${text}`;
-
-
-    let messa = await prepareWAMessageMedia({ image: { url: imageUrl } }, { upload: conn.waUploadToServer });
-
-
-    let cap = `${text.toUpperCase()}`;
-    let menu = `Search results for : ${cap}`;
-    let saludos = `~ Hi : @${m.sender.split("@")[0]} ~`;
-
-    let caption = `╮─━━━════〘 *Xnxx* 〙════━━━─╭
-│✑ ↝ ${saludos} ↜🧞.
-│✑ ${menu}
-╯─━━━══════〘 *+18* 〙══════━━━─╰`;
-
-    let count = 1;
-    let heager = [];  
-    for (const v of json) {
-      const linkXXX = v.link;
-      vids_.urls.push(linkXXX);
-
-      heager.push({
-        header: '',
-        title: v.title,
-        id: `.تحميل-سكس ${v.link}`,
-        description: `📽️ Download MP4`
-      });
-      count++;
-    }
-
-    let msg = generateWAMessageFromContent(m.chat, { 
-      viewOnceMessage: {
-        message: {
-          interactiveMessage: {
-            body: { text: caption },
-            footer: { text: '𝐒𝐇𝐀𝐖𝐀𝐙𝐀-𝐁𝐎𝐓' },
-            header: {
-              hasMediaAttachment: true,
-              imageMessage: messa.imageMessage,
-            },
-            nativeFlowMessage: {
-              buttons: [
-              {
-                name: 'single_select',
-                buttonParamsJson: JSON.stringify({
-                  title: 'نتائــج البحــث',
-                  sections: [
-                    {
-                      title: menu,
-                      highlight_label: '🧞',
-                      rows: heager
-                    }
-                  ]
-                }),
-              },
-              ],
-              messageParamsJson: "",
-            },
-          },
-        },
-      }
-    }, { userJid: conn.user.jid, quoted: fakecontact });
-
-    await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id });
-
-    global.videoListXXX.push(vids_);
-    
- 
-  } catch (e) {
-    throw e;
+  if (command == 'nsfwloli') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/nsfwloli.json`)).data;
+    const haha = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: haha}, caption: `_${command}_`.trim()}, {quoted: m});
   }
-}
 
-if (command === 'تحميل-سكس') {
-
-let xnxxLink = args[0];
-
-  try {
-    
-    const res = await xnxxdl(xnxxLink);
-    const json = await res.result.files;
-    let txt = `╾━━━━━━━━━━━━━━━━━━━━━━━╼\n> *أسم المقطع :* ${res.result.title} 🧞\n\n> *رابط الصفحه :* ${xnxxLink}\n╾━━━━━━━━━━━━━━━━━━━━━━━╼\n> 🧞 𝐋𝐨𝐚𝐝𝐢𝐧𝐠, 𝐰𝐚𝐢𝐭 𝐦𝐨𝐦𝐞𝐧𝐭...`;
-    
-  let txt2 = `╾━━━━━━━━━━━━━━━━━━━━━━━╼\n> *أسم المقطع :* ${res.result.title} 🧞\n> *وصف المقطع :* ${res.result.info} 🧞\n╾━━━━━━━━━━━━━━━━━━━━━━━╼`;
-    
-   // conn.reply(m.chat, txt, m);
-   
-   conn.sendMessage(m.chat, {text: txt, image: {url: res.result.image}, mimetype: 'image/png', fileName: 'seximage.png'}, {quoted: fakecontact});
-    
- // await conn.sendMessage(m.chat, {document: {url: json.high}, mimetype: 'video/mp4', fileName: res.result.title}, {quoted: fakecontact});
- 
- await conn.sendMessage(m.chat, {video: {url: json.high}, mimetype: 'video/mp4', fileName: res.result.title, caption: txt2}, {quoted: fakecontact});
-  
-  } catch {
-    throw `*جرب تاني واتاكد من الرابط 🧞*`;
+  if (command == 'nsfwfoot') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/nsfwfoot.json`)).data;
+    const haha = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: haha}, caption: `_${command}_`.trim()}, {quoted: m});
   }
-}
 
+  if (command == 'nsfwass') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/nsfwass.json`)).data;
+    const haha = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: haha}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'nsfwbdsm') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/nsfwbdsm.json`)).data;
+    const haha = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: haha}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'nsfwcum') {
+    const res = `${global.MyApiRestBaseUrl}/api/nsfw/nsfwcum&apikey=${global.MyApiRestApikey}`;
+    conn.sendMessage(m.chat, {image: {url: res}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'nsfwero') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/nsfwero.json`)).data;
+    const haha = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: haha}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'nsfwfemdom') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/nsfwfemdom.json`)).data;
+    const haha = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: haha}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'nsfwglass') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/nsfwglass.json`)).data;
+    const haha = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: haha}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'hentai') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/hentai.json`)).data;
+    const haha = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: haha}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'nsfworgy') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/nsfworgy.json`)).data;
+    const haha = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: haha}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'tetas') {
+    const resError = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/tetas.json`)).data;
+    let res = await conn.getFile(`https://api-fgmods.ddns.net/api/nsfw/boobs?apikey=fg-dylux`).data;
+    if (res == '' || !res || res == null) res = await resError[Math.floor(resError.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: res}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'booty') {
+    const resError = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/booty.json`)).data;
+    let res = await conn.getFile(`https://api-fgmods.ddns.net/api/nsfw/ass?apikey=fg-dylux`).data;
+    if (res == '' || !res || res == null) res = await resError[Math.floor(resError.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: res}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'ecchi') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/ecchi.json`)).data;
+    const url = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: url}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'furro') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/furro.json`)).data;
+    const url = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: url}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'trapito') {
+    const res = await fetch(`https://api.waifu.pics/nsfw/trap`);
+    const json = await res.json();
+    const url = json.url;
+    conn.sendMessage(m.chat, {image: {url: url}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'imagenlesbians') {
+    const resError = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/imagenlesbians.json`)).data;
+    let res = await conn.getFile(`https://api-fgmods.ddns.net/api/nsfw/lesbian?apikey=fg-dylux`).data;
+    if (res == '' || !res || res == null) res = await resError[Math.floor(resError.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: res}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'panties') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/panties.json`)).data;
+    const url = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: url}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'pene') {
+    const res = `${global.MyApiRestBaseUrl}/api/adult/pene?apikey=${global.MyApiRestApikey}`;
+    conn.sendMessage(m.chat, {image: {url: res}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'porno') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/porno.json`)).data;
+    const url = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: url}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'randomxxx') {
+    const rawjsonn = ['https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/tetas.json', 'https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/booty.json', 'https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/imagenlesbians.json', 'https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/panties.json', 'https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/porno.json'];
+    const rawjson = await rawjsonn[Math.floor(rawjsonn.length * Math.random())];
+    const res = (await axios.get(rawjson)).data;
+    const url = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: url}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'pechos') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/pechos.json`)).data;
+    const url = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: url}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'yaoi') {
+    const res = await fetch(`https://nekobot.xyz/api/image?type=yaoi`);
+    const json = await res.json();
+    const url = json.message;
+    conn.sendMessage(m.chat, {image: {url: url}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'yaoi2') {
+    const res = await fetch(`https://purrbot.site/api/img/nsfw/yaoi/gif`);
+    const json = await res.json();
+    const url = json.link;
+    conn.sendMessage(m.chat, {image: {url: url}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'yuri') {
+    const res = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/yuri.json`)).data;
+    const url = await res[Math.floor(res.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: url}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
+
+  if (command == 'yuri2') {
+    const resError = (await axios.get(`https://raw.githubusercontent.com/BrunoSobrino/TheMystic-Bot-MD/master/src/JSON/yuri.json`)).data;
+    const res = await fetch(`https://purrbot.site/api/img/nsfw/yuri/gif`);
+    const json = await res.json();
+    let url = json.link;
+    if (url == '' || !url || url == null) url = await resError[Math.floor(resError.length * Math.random())];
+    conn.sendMessage(m.chat, {image: {url: url}, caption: `_${command}_`.trim()}, {quoted: m});
+  }
 };
-
-handler.help = ['xns'].map((v) => v + ' <query>');
-handler.tags = ['downloader', 'premium'];
-handler.command = /^(xns|سكس|تحميل-سكس|xnd)$/i;
-
+handler.help = ['nsfwloli', 'nsfwfoot', 'nsfwass', 'nsfwbdsm', 'nsfwcum', 'nsfwero', 'nsfwfemdom', 'nsfwfoot', 'nsfwglass', 'nsfworgy', 'yuri', 'yuri2', 'yaoi', 'yaoi2', 'panties', 'tetas', 'booty', 'ecchi', 'furro', 'hentai', 'trapito', 'imagenlesbians', 'pene', 'porno', 'randomxxx', 'pechos'];
+handler.command = ['nsfwloli', 'nsfwfoot', 'nsfwass', 'nsfwbdsm', 'nsfwcum', 'nsfwero', 'nsfwfemdom', 'nsfwfoot', 'nsfwglass', 'nsfworgy', 'yuri', 'yuri2', 'yaoi', 'yaoi2', 'panties', 'tetas', 'booty', 'ecchi', 'furro', 'hentai', 'trapito', 'imagenlesbians', 'pene', 'porno', 'randomxxx', 'pechos'];
+handler.tags = ['nsfw'];
 export default handler;
-
-async function xnxxsearch(query) {
-  const baseurl = 'https://www.xnxx.com';
-  const url = `${baseurl}/search/${query}/${Math.floor(Math.random() * 8) + 4}`;
-  try {
-    const res = await fetch(url);
-    const text = await res.text();
-    const $ = cheerio.load(text);
-    const results = [];
-
-    $('div.mozaique').each((a, b) => {
-      const thumb = $(b).find('div.thumb a');
-      const thumbUnder = $(b).find('div.thumb-under');
-      thumb.each((i, el) => {
-        const link = baseurl + $(el).attr('href').replace('/THUMBNUM/', '/');
-        const title = thumbUnder.eq(i).find('a').attr('title');
-        const info = thumbUnder.eq(i).find('p.metadata').text();
-        results.push({ title, info, link });
-      });
-    });
-
-    return { code: 200, status: true, result: results };
-  } catch (err) {
-    return { code: 503, status: false, result: err };
-  }
-}
-
-async function xnxxdl(URL) {
-  return new Promise((resolve, reject) => {
-    fetch(`${URL}`, {method: 'get'}).then((res) => res.text()).then((res) => {
-      const $ = cheerio.load(res, {xmlMode: false});
-      const title = $('meta[property="og:title"]').attr('content');
-      const duration = $('meta[property="og:duration"]').attr('content');
-      const image = $('meta[property="og:image"]').attr('content');
-      const videoType = $('meta[property="og:video:type"]').attr('content');
-      const videoWidth = $('meta[property="og:video:width"]').attr('content');
-      const videoHeight = $('meta[property="og:video:height"]').attr('content');
-      const info = $('span.metadata').text();
-      const videoScript = $('#video-player-bg > script:nth-child(6)').html();
-      const files = {
-        low: (videoScript.match('html5player.setVideoUrlLow\\(\'(.*?)\'\\);') || [])[1],
-        high: videoScript.match('html5player.setVideoUrlHigh\\(\'(.*?)\'\\);' || [])[1],
-        HLS: videoScript.match('html5player.setVideoHLS\\(\'(.*?)\'\\);' || [])[1],
-        thumb: videoScript.match('html5player.setThumbUrl\\(\'(.*?)\'\\);' || [])[1],
-        thumb69: videoScript.match('html5player.setThumbUrl169\\(\'(.*?)\'\\);' || [])[1],
-        thumbSlide: videoScript.match('html5player.setThumbSlide\\(\'(.*?)\'\\);' || [])[1],
-        thumbSlideBig: videoScript.match('html5player.setThumbSlideBig\\(\'(.*?)\'\\);' || [])[1]};
-      resolve({status: 200, result: {title, URL, duration, image, videoType, videoWidth, videoHeight, info, files}});
-    }).catch((err) => reject({code: 503, status: false, result: err}));
-  });
-}
