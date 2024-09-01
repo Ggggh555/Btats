@@ -47,8 +47,8 @@ global.año = d.toLocaleDateString('en', {year: 'numeric'});
 global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
 //* ****************************
 global.wm2 = `${dia} ${fecha}\n𝚉𝙾𝙵𝙰𝙽•𝙱𝙾𝚃`;
-global.gt = '𝚉𝙾𝙵𝙰𝙽•𝙱𝙾𝚃';
-global.mysticbot = '𝚉𝙾𝙵𝙰𝙽•𝙱𝙾𝚃';
+global.gt = '𝔻𝕠𝕞𝕒★𝔹𝕆𝕋';
+global.mysticbot = '𝔻𝕠𝕞𝕒★𝔹𝕆𝕋';
 global.channel = 'https://whatsapp.com/channel/0029Vaein6eInlqIsCXpDs3y';
 global.md = 'https://github.com/BrunoSobrino/TheMystic-Bot-MD';
 global.mysticbot = 'https://github.com/BrunoSobrino/TheMystic-Bot-MD';
