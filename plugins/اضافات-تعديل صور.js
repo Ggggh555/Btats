@@ -13,14 +13,14 @@ let handler = async (m, { conn, usedPrefix, command, args }) => {
         
         const selectedIndex = parseInt(args[0]) - 1;
         if (isNaN(selectedIndex) || selectedIndex < 0 || selectedIndex >= subcommands.length) {
-            return m.reply(`اختيار غير صالح. ${promptMessage}`);
+            return m.reply(`اختيار كافر. ${promptMessage}`);
         }
         
         const selectedCommand = subcommands[selectedIndex];
         return await handler(m, { conn, usedPrefix, command: selectedCommand, args: args.slice(1) });
     } else {
         // تنفيذ الأوامر الفرعية
-        await processImage(m, conn, command, "Done by Bot Al Soltan ...");
+        await processImage(m, conn, command, "Done by Bot 𝔻𝕠𝕞𝕒★𝔹𝕆𝕋 ...");
     }
 };
 
@@ -34,7 +34,7 @@ async function processImage(m, conn, method, caption) {
     let q = m.quoted ? m.quoted : m;
     let mime = (q.msg || q).mimetype || q.mediaType || "";
     if (!mime)
-        throw `أين هي الصورة؟`;
+        throw `أين هي الصورة يا حبيبي ؟`;
     if (!/image\/(jpe?g|png)/.test(mime))
         throw `النوع ${mime} غير مدعوم`;
     else conn[method][m.sender] = true;
@@ -48,7 +48,7 @@ async function processImage(m, conn, method, caption) {
         error = true;
     } finally {
         if (error) {
-            m.reply("عملية فشلت :(");
+            m.repl ('عملية كافره :(");
         }
         delete conn[method][m.sender];
     }
