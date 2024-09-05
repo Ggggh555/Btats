@@ -2,11 +2,11 @@ import fetch from 'node-fetch'
 import fs from 'fs'
 import jimp from 'jimp'
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
-let wm = '◄⏤͟͟͞𝑍𝛩𝐹𝐴𝑁•𝐽•𝑈•𝐿'
+let wm = '◄⏤͟͟͞𝐺𝛩𝑁•N•K•A'
 
 
 let fakecontact = { 'key': { 'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': '𝑍𝛩𝐹𝐴𝑁•𝐵𝛩𝑇' }, 'message': { 'contactMessage': { 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` } }, 'participant': '0@s.whatsapp.net' };
-let fakegif = {key: {participant: `0@s.whatsapp.net`, ...('6289643739077-1613049930@g.us' ? {remoteJid: '6289643739077-1613049930@g.us'} : {})}, message: {'videoMessage': {'title': 'ZOFAN-BOT', 'h': `Hmm`, 'seconds': '99999', 'gifPlayback': 'true', 'caption': '𝑍𝛩𝐹𝐴𝑁•𝐵𝛩𝑇', 'jpegThumbnail': false}}};
+let fakegif = {key: {participant: `0@s.whatsapp.net`, ...('6289643739077-1613049930@g.us' ? {remoteJid: '6289643739077-1613049930@g.us'} : {})}, message: {'videoMessage': {'title': '𝐺𝛩𝑁 - 𝐵𝛩𝑇', 'h': `Hmm`, 'seconds': '99999', 'gifPlayback': 'true', 'caption': '𝐺𝛩𝑁 - 𝐵𝛩𝑇', 'jpegThumbnail': false}}};
 let mkey = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': '6289643739077-1613049930@g.us', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
 let fakelocation = {
   key: {
@@ -31,7 +31,7 @@ let faketext = {
     remoteJid: 'status@broadcast'
   },
   message: {
-    conversation: 'فلسطين حرة مهما كان الثمن ❤️🧞'
+    conversation: 'فلسطين حرة مهما كان الثمن ❤️🧞 + غون عمك'
   }
 };
 
