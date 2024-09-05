@@ -8,7 +8,7 @@ handler.all = async function (m, conn) {
             'participants': '0@s.whatsapp.net', 
             'remoteJid': 'status@broadcast', 
             'fromMe': false, 
-            'id': '𝑍𝛩𝐹𝐴𝑁•𝐵𝛩𝑇' 
+            'id': '𝐺𝛩𝑁 - 𝐵𝛩𝑇' 
         }, 
         'message': { 
             'contactMessage': { 
@@ -20,8 +20,8 @@ handler.all = async function (m, conn) {
    
     const vn = './media/الكلب.mp3'; //src sounds
     const vn2 = './media/سقيتك كاس.mp3'; 
-    const vn3 = 'https://telegra.ph/file/b007da23c721227452f55.mp4';
-    const vn4 = 'https://telegra.ph/file/710882610845fb644b99d.mp4';
+    const vn3 = 'https://telegra.ph/file/7385643fe845c312313f9.jpg';
+    const vn4 = 'https://telegra.ph/file/7385643fe845c312313f9.jpg';
 
     const txt = '*مرات مطورى القمر 🧸❤️*';
     const txt1 = `*عاوز اي من مطوري ي @${m.sender.split('@')[0]} 🧞*`;
@@ -32,7 +32,7 @@ handler.all = async function (m, conn) {
     const txt6 = '*ايوا يعم ولعانه معاك حب براحتك وانا هراقب 🧸❤️*';
  
     let num = "201273070745"; //number owner
-    let num2 = "48699514399"; //number bot
+    let num2 = "9647771486324"; //number bot
     let num3 = "201273070745";
     let sender = m.sender.split('@')[0];
  
