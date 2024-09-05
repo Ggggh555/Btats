@@ -14,19 +14,19 @@ global.authFile = `MysticSession`;
 global.isBaileysFail = false
 
 global.owner = [
-  ['201157028937', '𝔻𝕠𝕞𝕒', true],
-  ['201157028937', '𝔻𝕠𝕞𝕒★𝔹𝕆𝕋', true]
+  ['201157028937', '𝐺𝛩𝑁', true],
+  ['201157028937', '𝐺𝛩𝑁 - 𝐵𝛩𝑇', true]
 ];
 
-global.suittag = ['201157028937','201011880337'];
-global.prems = ['201157028937','201011880337'];
+global.suittag = ['201559513483','201011880337'];
+global.prems = ['201559513483','201011880337'];
 
-global.packname = '𝔻𝕠𝕞𝕒-𝕞𝕕';
-global.author = '𝔻𝕠𝕞𝕒-𝕄𝕕𝕥';
-global.wm = '༺ 𝔻𝕠𝕞𝕒★𝔹𝕆𝕋 ༺';
-global.titulowm = '༺ 𝔻𝕠𝕞𝕒★𝔹𝕆𝕋 ༺';
-global.titulowm2 = '𝔻𝕠𝕞𝕒_𝕞𝕕';
-global.igfg = '༺ 𝔻𝕠𝕞𝕒★𝔹𝕆𝕋 ༺';
+global.packname = '𝐺𝛩𝑁 - 𝐵𝛩𝑇';
+global.author = '𝐺𝛩𝑁 - 𝐵𝛩𝑇';
+global.wm = '༺ 𝐺𝛩𝑁 ★ 𝐵𝛩𝑇 ༺';
+global.titulowm = '༺ 𝐺𝛩𝑁-𝐵𝛩𝑇 ༺';
+global.titulowm2 = '𝐺𝛩𝑁 - 𝐵𝛩𝑇';
+global.igfg = '༺ 𝐺𝛩𝑁 - 𝐵𝛩𝑇 ༺';
 global.wait = '*[ ⏳ ] 𝐖𝐚𝐢𝐭 ya muslim 𝐥𝐨𝐚𝐝𝐢𝐧𝐠...*';
 
 global.imagen1 = fs.readFileSync('./src/assets/images/menu/languages/es/menu.png');
@@ -34,6 +34,7 @@ global.imagen2 = fs.readFileSync('./src/assets/images/menu/languages/pt/menu.png
 global.imagen3 = fs.readFileSync('./src/assets/images/menu/languages/fr/menu.png')
 global.imagen4 = fs.readFileSync('./src/assets/images/menu/languages/en/menu.png')
 global.imagen5 = fs.readFileSync('./src/assets/images/menu/languages/ru/menu.png')
+global.imagen6 = fs.readFileSync('./src/assets/images/menu/languages/ar/menu.png')
 
 global.mods = [];
 
@@ -55,7 +56,7 @@ global.mysticbot = 'https://github.com/BrunoSobrino/TheMystic-Bot-MD';
 global.waitt = '*[ ⏳ ] 𝐖𝐚𝐢𝐭 𝐰𝐡𝐢𝐥𝐞 𝐥𝐨𝐚𝐝𝐢𝐧𝐠...*';
 global.waittt = '*[ ⏳ ] 𝐖𝐚𝐢𝐭 𝐰𝐡𝐢𝐥𝐞 𝐥𝐨𝐚𝐝𝐢𝐧𝐠...*';
 global.waitttt = '*[ ⏳ ] 𝐖𝐚𝐢𝐭 𝐰𝐡𝐢𝐥𝐞 𝐥𝐨𝐚𝐝𝐢𝐧𝐠...*';
-global.nomorown = '201157028937';
+global.nomorown = '201559513483';
 global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf'];
 global.cmenut = '❖––––––『';
 global.cmenub = '┊✦ ';
