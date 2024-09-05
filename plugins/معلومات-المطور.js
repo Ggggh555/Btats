@@ -38,7 +38,7 @@ let faketext = {
 let fake = [fakegif, fakecontact, mkey, fakelocation, faketext]
 let vn = fake[Math.floor(Math.random() * fake.length)];
 
-let poster = ['https://telegra.ph/file/cd788106d4ef939a3eb15.jpg', 'https://telegra.ph/file/2e0db53d098c3ea42a423.jpg', 'https://telegra.ph/file/40ed6c9850fef7150e408.jpg', 'https://telegra.ph/file/cd788106d4ef939a3eb15.jpg']
+let poster = ['https://telegra.ph/file/cd788106d4ef939a3eb15.jpg', 'https://telegra.ph/file/7385643fe845c312313f9.jpg', 'https://telegra.ph/file/7385643fe845c312313f9.jpg', 'https://telegra.ph/file/7385643fe845c312313f9.jpg']
 let vn2 = poster[Math.floor(Math.random() * poster.length)];
 
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
@@ -47,13 +47,13 @@ let bjir = 'https://i.imgur.com/RbaRjrb.jpeg'
 let name = await conn.getName(who)
 
 let delay = time => new Promise(res => setTimeout(res, time))
-await conn.sendContact(m.chat, [[`201273070745` + `@s.whatsapp.net`, wm]], vn, {
+await conn.sendContact(m.chat, [[`201559513483` + `@s.whatsapp.net`, wm]], vn, {
  contextInfo: { 
  forwardingScore: 2023,
 isForwarded: false, 
  externalAdReply: {  
  title: '𝑇𝛨𝛯 𝐿𝛩𝛻𝛯𝐿𝑌 𝛩𝑊𝛮𝛯𝑅 𝛩𝐹', 
- body: '𝑍𝛩𝐹𝐴𝑁•𝐵𝛩𝑇', 
+ body: '𝐺𝛩𝑁 - 𝐵𝛩𝑇', 
  sourceUrl: 'https://whatsapp.com/channel/0029Vael6wMJP20ze3IXJk0z',
  thumbnail: vn2,
  thumbnailUrl: vn2, 
