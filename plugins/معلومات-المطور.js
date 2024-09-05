@@ -38,7 +38,7 @@ let faketext = {
 let fake = [fakegif, fakecontact, mkey, fakelocation, faketext]
 let vn = fake[Math.floor(Math.random() * fake.length)];
 
-let poster = ['https://telegra.ph/file/cd788106d4ef939a3eb15.jpg', 'https://telegra.ph/file/eed27ebdc32a086cd321e.jpg', 'https://telegra.ph/file/40ed6c9850fef7150e408.jpg', 'https://telegra.ph/file/cd788106d4ef939a3eb15.jpg']
+let poster = ['https://telegra.ph/file/cd788106d4ef939a3eb15.jpg', 'https://telegra.ph/file/2e0db53d098c3ea42a423.jpg', 'https://telegra.ph/file/40ed6c9850fef7150e408.jpg', 'https://telegra.ph/file/cd788106d4ef939a3eb15.jpg']
 let vn2 = poster[Math.floor(Math.random() * poster.length)];
 
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
